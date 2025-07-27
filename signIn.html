@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn Netflix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #000000bf;
+            --tx-color: #fff;
+            --main-color: rgb(145, 145, 145);
+            --bg2-color: #333333;
+        }
+
+        body {
+            background: #000;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/IN-en-20230717-popsignuptwoweeks-perspective_alpha_website_large.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            padding: 0 6%;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            padding: 5px 5%;
+        }
+
+        #logo {
+            margin-right: auto;
+        }
+
+        .btn1 {
+            border: 1px solid #fff;
+            color: #fff;
+            background: var(--bg2-color);
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 1.1rem;
+            width: 100px;
+            height: 30px;
+            margin: 30px 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn2 {
+            border: 1px solid #fff;
+            color: #fff;
+            background: red;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 1.1rem;
+            width: 100px;
+            height: 30px;
+            margin: 30px 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .hd-container {
+            display: flex;
+            justify-content: center;
+            padding: 0 75px;
+        }
+
+        .form {
+            position: relative;
+            width: 450px;
+            height: 600px;
+            background: var(--bg-color);
+            padding: 30px 5%;
+            border-radius: 10px;
+            color: var(--main-color);
+        }
+
+        .form h2 {
+            font-size: 2.2rem;
+            margin: 10px 10px;
+            color: var(--tx-color);
+        }
+
+        .form #em,
+        #pass {
+            width: 90%;
+            height: 40px;
+            border-radius: 5px;
+            background: var(--bg2-color);
+            margin: 10px 10px;
+            padding: 10px 10px;
+        }
+
+        .form #s-btn {
+            width: 90%;
+            height: 40px;
+            border-radius: 5px;
+            background: red;
+            color: var(--tx-color);
+            margin: 10px 10px;
+        }
+
+        .form #checkx {
+            margin: 10px 10px;
+        }
+
+        .form #checkx label {
+            color: var(--main-color);
+        }
+
+        .form #n-lp {
+            margin-left: 30%;
+            color: var(--main-color);
+            text-decoration: none;
+        }
+
+        .form-more {
+            margin: 50px 10px;
+            position: relative;
+        }
+
+        .form-more h3 {
+            color: var(--main-color);
+        }
+
+        .form-more span a {
+            margin-left: 3px;
+            color: var(--tx-color);
+            text-decoration: none;
+        }
+
+        .form-more p {
+            display: inline;
+            font-size: 0.8rem;
+            color: var(--main-color);
+        }
+
+        .form-more input[type="radio"] {
+            display: none;
+        }
+
+        .form-more label{
+            color: var(--tx-color);
+        }
+
+        .form-more .inside-p {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            transition: max-height 0.5s, padding 0.5s;
+        }
+
+        .form-more input[type="radio"]:checked + label + .inside-p {
+            max-height: 300px;
+            padding: 10px 0;
+        }
+
+        /* footer section */
+
+        footer {
+            width: 100%;
+            padding: 0 6%;
+            height: 45vh;
+            color: var(--main-color);
+            background: var(--bg-color);
+        }
+
+        footer h2 {
+            margin: 20px 25px;
+            font-size: 1.1rem;
+            padding-top: 30px;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between
+        }
+
+        .footer-container .footer-box {
+            margin: 1px 10px;
+            padding: 10px 10px;
+        }
+
+        .footer-container .footer-box .footer-content {
+            line-height: 2.3;
+        }
+
+        .footer-container .footer-box .footer-content a{
+            color: var(--main-color);
+        }
+
+        footer .btn1 {
+            margin: 10px 25px;
+        }
+
+        footer h3 {
+            margin: 20px 25px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css"> -->
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#" id="logo"><img src="img/Netflix_Logo_PMS.png" alt="logo" width="200" height="80"></a>
+        </nav>
+        <div class="hd-container">
+            <form action="" class="form">
+                <h2>Sign In</h2>
+                <label for="em"></label>
+                <input type="text" placeholder="Email or Phone number" id="em" name="email">
+                <label for="pass"></label>
+                <input type="password" placeholder="Password" id="pass" name="password">
+                <button id="s-btn">Sign In</button>
+                <input type="checkbox" id="checkx">
+                <label for="checkx">Remember me</label>
+                <a href="#" id="n-lp">Need help?</a>
+                <div class="form-more">
+                    <h3>New to Netflix? <span><a href="#">Sign up now</a></span></h3>
+                    <p>This page is protected by googel reCAPTCHA to ensure you're not a bot.</p>
+                    <input type="radio" name="more" id="lmore">
+                    <label for="lmore">Learn more.</label>
+                    <div class="inside-p">
+                        <p>The information collected by Google reCAPTCHA is subject to the Google
+                            <a href="#">Privacy
+                            Policy</a>
+                            and <a href="">Terms of Service,</a> and is used for providing, maintaining, and improving the reCAPTCHA
+                            service
+                            and for general security purposes (it is not used for personalised advertising by Google).
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <footer>
+        <h2>Questions? Call :- <a href="#">000-800-919-1694</a></h2>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="footer-content"><a href="#">FAQ</a></div>
+                <div class="footer-content"><a href="#">Investor Relations</a></div>
+                <div class="footer-content"><a href="#">Privacy</a></div>
+                <div class="footer-content"><a href="#">Speed Test</a></div>
+            </div>
+
+            <div class="footer-box">
+                <div class="footer-content"><a href="#">Help Centre</a></div>
+                <div class="footer-content"><a href="#">Jobs</a></div>
+                <div class="footer-content"><a href="#">Cookie Preference</a></div>
+                <div class="footer-content"><a href="#">Legal Notices</a></div>
+            </div>
+
+            <div class="footer-box">
+                <div class="footer-content"><a href="#">Account</a></div>
+                <div class="footer-content"><a href="#">Ways to Watch</a></div>
+                <div class="footer-content"><a href="#">Corporate Information</a></div>
+                <div class="footer-content"><a href="#">Only on Netflix</a></div>
+            </div>
+
+            <div class="footer-box">
+                <div class="footer-content"><a href="#">Media Centre</a></div>
+                <div class="footer-content"><a href="#">Terms of Use</a></div>
+                <div class="footer-content"><a href="#">Contact Us</a></div>
+            </div>
+        </div>
+        <botton class="btn1">English</botton>
+        <h3>Netflix India</h3>
+    </footer>
+</body>
+
+</html>
